@@ -1,13 +1,13 @@
-# JRTLeftSliderController
+# JRTPageViewC
 
 Installation
 -------------
 
 ####Cocoapod Method:-
-**JRTViperPattern** is available through CocoaPods, to install it simply add the following line to your Podfile:
+**JRTPageViewC** is available through CocoaPods, to install it simply add the following line to your Podfile:
 
->pod 'JRTLeftSliderController'
+>pod 'JRTPageViewC'
 
 ####Source Code Method:-
-Just drag and drop **JRTLeftSliderController** directory from demo project to your project. That's it.
+Just drag and drop **JRTPageViewC** directory from demo project to your project. That's it.
 
