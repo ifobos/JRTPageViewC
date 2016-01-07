@@ -8,6 +8,5 @@ Pod::Spec.new do |s|
   s.platform     = :ios, "8.0"
   s.source       = { :git => "https://github.com/ifobos/JRTPageViewC.git", :tag => "0.0.1" }
   s.source_files = "JRTPageViewC/JRTPageViewC/PodFiles/*.{h,m}"
-  s.resources    = "JRTPageViewC/JRTPageViewC/PodFiles/*.{png,bundle,xib,nib}"
   s.requires_arc = true
 end
