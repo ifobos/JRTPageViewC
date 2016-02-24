@@ -114,19 +114,19 @@
 			isa = PBXGroup;
 			children = (
 				314665E11C3EDA7400548493 /* PodFiles */,
+				314665AE1C3ED9CD00548493 /* Supporting Files */,
 				314665B11C3ED9CD00548493 /* AppDelegate.h */,
 				314665B21C3ED9CD00548493 /* AppDelegate.m */,
-				314665B41C3ED9CD00548493 /* ViewController.h */,
-				314665B51C3ED9CD00548493 /* ViewController.m */,
-				314665B71C3ED9CD00548493 /* Main.storyboard */,
 				314665BA1C3ED9CD00548493 /* Assets.xcassets */,
-				314665BC1C3ED9CD00548493 /* LaunchScreen.storyboard */,
 				314665BF1C3ED9CD00548493 /* Info.plist */,
-				314665AE1C3ED9CD00548493 /* Supporting Files */,
-				314665E81C3EDC8C00548493 /* JRTPagedCollectionViewExample.h */,
-				314665E91C3EDC8C00548493 /* JRTPagedCollectionViewExample.m */,
 				314665EB1C3EE1E400548493 /* JRTPageViewControllerExample.h */,
 				314665EC1C3EE1E400548493 /* JRTPageViewControllerExample.m */,
+				314665E81C3EDC8C00548493 /* JRTPagedCollectionViewExample.h */,
+				314665E91C3EDC8C00548493 /* JRTPagedCollectionViewExample.m */,
+				314665BC1C3ED9CD00548493 /* LaunchScreen.storyboard */,
+				314665B71C3ED9CD00548493 /* Main.storyboard */,
+				314665B41C3ED9CD00548493 /* ViewController.h */,
+				314665B51C3ED9CD00548493 /* ViewController.m */,
 			);
 			path = JRTPageViewC;
 			sourceTree = "<group>";
@@ -136,14 +136,14 @@
 			children = (
 				314665AF1C3ED9CD00548493 /* main.m */,
 			);
-			name = "Supporting Files";
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		314665C71C3ED9CD00548493 /* JRTPageViewCTests */ = {
 			isa = PBXGroup;
 			children = (
-				314665C81C3ED9CD00548493 /* JRTPageViewCTests.m */,
 				314665CA1C3ED9CD00548493 /* Info.plist */,
+				314665C81C3ED9CD00548493 /* JRTPageViewCTests.m */,
 			);
 			path = JRTPageViewCTests;
 			sourceTree = "<group>";
@@ -151,8 +151,8 @@
 		314665D21C3ED9CD00548493 /* JRTPageViewCUITests */ = {
 			isa = PBXGroup;
 			children = (
-				314665D31C3ED9CD00548493 /* JRTPageViewCUITests.m */,
 				314665D51C3ED9CD00548493 /* Info.plist */,
+				314665D31C3ED9CD00548493 /* JRTPageViewCUITests.m */,
 			);
 			path = JRTPageViewCUITests;
 			sourceTree = "<group>";
@@ -160,10 +160,10 @@
 		314665E11C3EDA7400548493 /* PodFiles */ = {
 			isa = PBXGroup;
 			children = (
-				314665E21C3EDA7400548493 /* JRTPagedCollectionView.h */,
-				314665E31C3EDA7400548493 /* JRTPagedCollectionView.m */,
 				314665E41C3EDA7400548493 /* JRTPageViewController.h */,
 				314665E51C3EDA7400548493 /* JRTPageViewController.m */,
+				314665E21C3EDA7400548493 /* JRTPagedCollectionView.h */,
+				314665E31C3EDA7400548493 /* JRTPagedCollectionView.m */,
 			);
 			path = PodFiles;
 			sourceTree = "<group>";
@@ -346,6 +346,7 @@
 				314665B81C3ED9CD00548493 /* Base */,
 			);
 			name = Main.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 		314665BC1C3ED9CD00548493 /* LaunchScreen.storyboard */ = {
@@ -354,6 +355,7 @@
 				314665BD1C3ED9CD00548493 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

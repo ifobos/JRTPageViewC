@@ -11,27 +11,25 @@
 
 @interface JRTPagedCollectionViewExample ()
 @property (weak, nonatomic) IBOutlet JRTPagedCollectionView *pagedCollectionView;
-@property (weak, nonatomic) IBOutlet UIPageControl          *pageControl;
+@property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
 @end
 
 @implementation JRTPagedCollectionViewExample
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.pagedCollectionView.pageControl    = self.pageControl;
-    UIView *redView                         = [UIView new];
-    redView.backgroundColor                 = [UIColor redColor];
-    UIView *greenView                       = [UIView new];
-    greenView.backgroundColor               = [UIColor greenColor];
-    UIView *blueView                        = [UIView new];
-    blueView.backgroundColor                = [UIColor blueColor];
-    self.pagedCollectionView.views          = @[redView, greenView, blueView];
+    self.pagedCollectionView.pageControl = self.pageControl;
+    UIView *redView = [UIView new];
+    redView.backgroundColor = [UIColor redColor];
+    UIView *greenView = [UIView new];
+    greenView.backgroundColor = [UIColor greenColor];
+    UIView *blueView = [UIView new];
+    blueView.backgroundColor = [UIColor blueColor];
+    self.pagedCollectionView.views = @[redView, greenView, blueView];
 }
 
-- (IBAction)close:(id)sender
-{
+- (IBAction)close:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

@@ -24,103 +24,88 @@
 @property (nonatomic, strong) NSArray *views;
 @end
 
-static NSString * const reuseIdentifier = @"JRTPagedCollectionViewCell";
+static NSString *const reuseIdentifier = @"JRTPagedCollectionViewCell";
 
 @implementation JRTPagedCollectionView
 
 #pragma mark - Setter
 
--(void)setViews:(NSArray *)views
-{
+- (void)setViews:(NSArray *)views {
     _views = views;
     [self reloadData];
 }
 
-
 #pragma mark - View
 
-- (void)didMoveToSuperview
-{
+- (void)didMoveToSuperview {
     [super didMoveToSuperview];
-    self.dataSource     = self;
-    self.delegate       = self;
-    self.pagingEnabled  = YES;
+    self.dataSource = self;
+    self.delegate = self;
+    self.pagingEnabled = YES;
     [self registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
     [((UICollectionViewFlowLayout *)[self collectionViewLayout]) setScrollDirection:UICollectionViewScrollDirectionHorizontal];
 }
 
 #pragma mark <UICollectionViewDataSource>
 
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
-{
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     self.pageControl.userInteractionEnabled = NO;
-    NSInteger number                        = [self.views count];
-    self.pageControl.numberOfPages          = number;
+    NSInteger number = [self.views count];
+    self.pageControl.numberOfPages = number;
     return number;
 }
 
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
-{
-    UICollectionViewCell *cell  = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
-    UIView *targetView          = [self.views objectAtIndex:indexPath.row];
-    targetView.frame            = CGRectMake(0, 0,self.bounds.size.width, self.bounds.size.height);
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
+    UIView *targetView = [self.views objectAtIndex:indexPath.row];
+    targetView.frame = CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height);
     [cell.contentView addSubview:targetView];
     return cell;
 }
 
 #pragma mark - UICollectionViewDelegateFlowLayout
 
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
-{
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
     return self.frame.size;
 }
 
-- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
-{
+- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
     return UIEdgeInsetsZero;
 }
 
-- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section
-{
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section {
     return 0;
 }
 
-- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section
-{
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section {
     return 0;
 }
 
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section
-{
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section {
     return CGSizeZero;
 }
 
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForFooterInSection:(NSInteger)section
-{
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForFooterInSection:(NSInteger)section {
     return CGSizeZero;
 }
 
 #pragma mark - Scroll
 
--(void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView
-{
+- (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView {
     [self updatePageControl];
 }
 
-- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
-{
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
     [self updatePageControl];
 }
 
--(void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
-{
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
     [self updatePageControl];
 }
 
-- (void)updatePageControl
-{
-    NSIndexPath *indexPath          = [self indexPathForCell:[[self visibleCells] lastObject]];
-    self.pageControl.currentPage    = indexPath.row;
+- (void)updatePageControl {
+    NSIndexPath *indexPath = [self indexPathForCell:[[self visibleCells] lastObject]];
+    self.pageControl.currentPage = indexPath.row;
 }
 
 @end
